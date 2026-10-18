@@ -7,19 +7,31 @@ References: N/A
 def get_letter():
     """ Prompts user to provide an upper case letter (A, B, or C) """
     while True:
-        letter=input("Give an single uppercase letter: ")
+        letter = input("Give an single uppercase letter: ")
         if len(letter) > 1:
-            print("Error: it needs to be a single character.")
+            print("Error: it needs to be an single character.")
             continue
         if letter not in ("ABC"):
             print("Error: You provided the wrong character.")
             continue
         break
+    return letter
 
 def get_digit():
-    """ Add your own Docstring """
-    # remove the default return and add your code
-    return 0
+    """ Prompts user to provide an integer (1, 2, or 3) """
+    while True:
+        digit = input("Give an single number character: ")
+        if not digit.isdigit():
+            print ("Error: your input should be only digits.")
+            continue
+        if digit not in ("123"):
+            print("Error: a single digit needs to be in [1,3]")
+            continue
+        if len(digit) > 1:
+            print ("Error: it needs to be an single integer")
+            continue
+        break
+    return digit
 
 
 def check_pattern(letter, digit, lst):
@@ -39,6 +51,7 @@ def main ():
     "B@2@", "@@C1", "1B@", "A@@2", "@A3@", "@1@A", "2AA@",
     "1B1B", "333B", "1@CC", "3@@C", "333C"]
     get_letter()
+    get_digit()
     # TODO: Add your calls to get_letter, get_digit, and check_pattern
     # Inside a loop so that:
     #     After printing the results, a prompt appears requiring an input
