@@ -1,13 +1,20 @@
 """
-Name: (put your name here)
-Peers: (add any collaborators)
-References: (anything you checked to solve this)
+Name: Sally He
+Peers: N/A
+References: N/A
 """
 
 def get_letter():
-    """ Add your own Docstring """
-    # remove the default return and add your code
-    return ""
+    """ Prompts user to provide an upper case letter (A, B, or C) """
+    while True:
+        letter=input("Give an single uppercase letter: ")
+        if len(letter) > 1:
+            print("Error: it needs to be a single character.")
+            continue
+        if letter not in ("ABC"):
+            print("Error: You provided the wrong character.")
+            continue
+        break
 
 def get_digit():
     """ Add your own Docstring """
@@ -31,7 +38,7 @@ def main ():
     st_list = ["@C@2", "@2B", "A3", "C2C2", "AA@1", "@B@33",
     "B@2@", "@@C1", "1B@", "A@@2", "@A3@", "@1@A", "2AA@",
     "1B1B", "333B", "1@CC", "3@@C", "333C"]
-
+    get_letter()
     # TODO: Add your calls to get_letter, get_digit, and check_pattern
     # Inside a loop so that:
     #     After printing the results, a prompt appears requiring an input
